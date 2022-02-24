@@ -82,8 +82,8 @@ public class Job implements Comparable {
     }
 
     public boolean canDoItBool(ArrayList<Personnage> personnages) {
-        if(this.canDoIt(personnages))
-
+        if (this.canDoIt(personnages).size() == this.getSkillTaskList().size()) return true;
+        return false;
     }
 
     public ArrayList<Personnage> canDoIt(ArrayList<Personnage> personnages) {
@@ -97,6 +97,6 @@ public class Job implements Comparable {
                 }
             }
         }
-
+        return personnagesAssign;
     }
 }
