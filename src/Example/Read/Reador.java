@@ -22,10 +22,8 @@ public class Reador {
         numberOfContributors=Integer.parseInt(toRead.get(0).get(0));
         numberOfJobToDo=Integer.parseInt(toRead.get(0).get(1));
         while (listOfJob.size()==numberOfJobToDo){
-
         }
         while (listOfPerso.size()==numberOfContributors){
-
         }
     }
 
