@@ -5,7 +5,7 @@ import Example.Skill;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Personnage {
+public class Personnage{
     String name;
     int nbOfSkill;
     List<Skill> skillList = new ArrayList<>();
@@ -67,5 +67,18 @@ public class Personnage {
     public int getSkillListSize() {
         return skillList.size();
     }
+
+    //Eligible =
+    //Possèder le skill
+    //avoir le bon niveau (>= niveau demandé)
+    public boolean isEligibleForSkill(Skill skill) {
+        for(Skill currentSkill : skillList){
+            if(currentSkill.equals(skill) && currentSkill.getLevel() >= skill.getLevel()){
+                return true;
+            }
+        }
+        return false;
+    }
+
 
 }

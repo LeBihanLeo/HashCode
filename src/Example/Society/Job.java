@@ -13,6 +13,8 @@ public class Job implements Comparable {
     int bestBefore;
     int numberOfRoles;
     List<Skill> skillTaskList;
+    List<Personnage> peopleWorkOn;
+
 
     boolean assign = false;
 
@@ -23,6 +25,7 @@ public class Job implements Comparable {
         this.bestBefore = bestBefore;
         this.numberOfRoles = numberOfRoles;
         skillTaskList = new ArrayList<>();
+        peopleWorkOn = new ArrayList<>();
 
     }
 
@@ -81,6 +84,17 @@ public class Job implements Comparable {
         return this.assign;
     }
 
+    //associer une/plusieurs personne compétente à ce job
+    //trouver les personnes compétentes FAUX
+    //trouver le nombre de personne à associer au projet
+    //associer les personnes au projet
+
+    public void associate(ArrayList<Personnage> personnages){
+        for(int i = 0 ; i < numberOfRoles ; i++){
+            peopleWorkOn.add(personnages.get(i));
+        }
+    }
+
     public boolean canDoItBool(ArrayList<Personnage> personnages) {
         if (this.canDoIt(personnages).size() == this.getSkillTaskList().size()) return true;
         return false;
@@ -90,9 +104,10 @@ public class Job implements Comparable {
         ArrayList<Personnage> personnagesAssign = new ArrayList<>();
 
         for (int i = 0; i < skillTaskList.size(); i++) {
-            boolean ok = false;
+            boolean someoneCanWorkOnIt = false;
             for (int j = 0; j < personnages.size(); j++) {
-                if (!(ok) && personnages.get(j).isEligible(this) && personnages.get(i).getCanWork()) {
+                if (!(someoneCanWorkOnIt) && personnages.get(j).isEligible(this) && personnages.get(i).getCanWork()) {
+                    someoneCanWorkOnIt = true;
                     personnagesAssign.add(personnages.get(j));
                 }
             }
