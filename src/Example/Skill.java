@@ -28,5 +28,7 @@ public class Skill {
     }
 
 
-
+    public void upgrade() {
+        level++;
+    }
 }

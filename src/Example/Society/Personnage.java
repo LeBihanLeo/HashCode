@@ -10,9 +10,8 @@ public class Personnage{
     int nbOfSkill;
     List<Skill> skillList = new ArrayList<>();
 
-    Job currentJob;
+    Job currentJob = null;
 
-    Job job = null;
 
     public Personnage(String name, int nbOfSkill) {
         this.name = name;
@@ -28,7 +27,7 @@ public class Personnage{
     }
 
     public boolean getCanWork() {
-        if (this.job == null) return true;
+        if (this.currentJob == null) return true;
         return false;
     }
 
@@ -73,7 +72,7 @@ public class Personnage{
     //avoir le bon niveau (>= niveau demandé)
     public boolean isEligibleForSkill(Skill skill) {
         for(Skill currentSkill : skillList){
-            if(currentSkill.equals(skill) && currentSkill.getLevel() >= skill.getLevel()){
+            if(getCanWork() && currentSkill.equals(skill) && currentSkill.getLevel() >= skill.getLevel()){
                 return true;
             }
         }
@@ -81,4 +80,13 @@ public class Personnage{
     }
 
 
+    public void endWork() {
+        this.currentJob = null;
+    }
+
+    public void upgradeSkill(Skill skill) {
+        if(skillList.contains(skill)){
+            skill.upgrade();
+        }
+    }
 }

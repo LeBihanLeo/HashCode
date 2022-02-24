@@ -29,6 +29,11 @@ public class Job implements Comparable {
 
     }
 
+    public boolean projectIsEnd(){
+        if(nbOfDays == 0 ) return true;
+        return false;
+    }
+
     public void addSkillTaskList(Skill skillTask) {
         this.skillTaskList.add(skillTask);
     }
@@ -92,6 +97,7 @@ public class Job implements Comparable {
     public void associate(ArrayList<Personnage> personnages){
         for(int i = 0 ; i < numberOfRoles ; i++){
             peopleWorkOn.add(personnages.get(i));
+            personnages.get(i).setJob(this);
         }
     }
 
@@ -113,5 +119,34 @@ public class Job implements Comparable {
             }
         }
         return personnagesAssign;
+    }
+
+    public void passDay() {
+        nbOfDays--;
+    }
+
+    public List<Personnage> getPeopleWorkOn() {
+        return peopleWorkOn;
+    }
+
+    public String getWorker() {
+       String res = "";
+        for(int i = 0 ; i < peopleWorkOn.size() -1 ; i++){
+            res+=peopleWorkOn.get(i).getName()+" ";
+        }
+        res+=peopleWorkOn.get(peopleWorkOn.size() -1).getName()+"\n";
+        return res;
+    }
+
+    public void upgradeWorkers() {
+        skillTaskList.forEach(skill -> peopleWorkOn.forEach(people -> people.upgradeSkill(skill)));
+        ;
+    }
+
+    @Override
+    public String toString() {
+        return "Job{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

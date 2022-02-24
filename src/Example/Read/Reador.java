@@ -44,5 +44,45 @@ public class Reador {
             this.listOfJob.add(job);
         }
     }
+
+    public ArrayList<ArrayList<String>> getToRead() {
+        return toRead;
+    }
+
+    public void setToRead(ArrayList<ArrayList<String>> toRead) {
+        this.toRead = toRead;
+    }
+
+    public int getNumberOfContributors() {
+        return numberOfContributors;
+    }
+
+    public void setNumberOfContributors(int numberOfContributors) {
+        this.numberOfContributors = numberOfContributors;
+    }
+
+    public int getNumberOfJobToDo() {
+        return numberOfJobToDo;
+    }
+
+    public void setNumberOfJobToDo(int numberOfJobToDo) {
+        this.numberOfJobToDo = numberOfJobToDo;
+    }
+
+    public ArrayList<Personnage> getListOfPerso() {
+        return listOfPerso;
+    }
+
+    public void setListOfPerso(ArrayList<Personnage> listOfPerso) {
+        this.listOfPerso = listOfPerso;
+    }
+
+    public ArrayList<Job> getListOfJob() {
+        return listOfJob;
+    }
+
+    public void setListOfJob(ArrayList<Job> listOfJob) {
+        this.listOfJob = listOfJob;
+    }
 }
 

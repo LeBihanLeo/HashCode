@@ -2,17 +2,19 @@ package Example;
 
 import Example.Read.InputReader;
 import Example.Read.Reador;
+import Example.Society.Society;
 
 import java.util.ArrayList;
 
 //update
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World");
         ArrayList<ArrayList<String>> input = InputReader.readInput();
         Reador reador=new Reador();
-        System.out.println(input);
-        InputReader.writeOutput("Hello World");
+        Society society = new Society(reador.getListOfPerso(), reador.getListOfJob());
+        String res = society.runLife();
+        System.out.println(res);
+        InputReader.writeOutput(res);
     }
 }
 
