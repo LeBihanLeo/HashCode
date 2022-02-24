@@ -11,7 +11,7 @@ public class Reador {
     }
     void read(){
         numberOfContributors=Integer.parseInt(toRead.get(0).get(0));
-        numberOfContributors=Integer.parseInt(toRead.get(0).get(1));
+        numberOfJobToDo=Integer.parseInt(toRead.get(0).get(1));
         
     }
 
