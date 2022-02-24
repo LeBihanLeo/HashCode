@@ -25,12 +25,22 @@ public class Reador {
         numberOfContributors=Integer.parseInt(toRead.get(0).get(0));
         numberOfJobToDo=Integer.parseInt(toRead.get(0).get(1));
         ligne++;
-        while (listOfJob.size()==numberOfJobToDo){
-            Personnage personnage=new Personnage(toRead.get(ligne).get(0),Integer.parseInt(toRead.get(ligne).get(1)));
-            while personnage.
-        }
         while (listOfPerso.size()==numberOfContributors){
+            Personnage personnage=new Personnage(toRead.get(ligne).get(0),Integer.parseInt(toRead.get(ligne).get(1)));
+            ligne++;
+            while (personnage.getSkillListSize()<personnage.getNbOfSkill()){
+                personnage.addSkillList(new Skill(toRead.get(ligne).get(0),Integer.parseInt(toRead.get(ligne).get(1))));
+                ligne++;
+            }
+        }
+        while (listOfJob.size()==numberOfJobToDo){
+            Job job=new Job(toRead.get(ligne).get(0),Integer.parseInt(toRead.get(ligne).get(1)),Integer.parseInt(toRead.get(ligne).get(2)),Integer.parseInt(toRead.get(ligne).get(3)),Integer.parseInt(toRead.get(ligne).get(4)));
+            ligne++;
+            while (job.getSkillTaskListSize()<job.getNumberOfRoles()){
+                job.addSkillTaskList(new Skill(toRead.get(ligne).get(0),Integer.parseInt(toRead.get(ligne).get(1))));
+                ligne++;
+            }
         }
     }
-
 }
+
