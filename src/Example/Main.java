@@ -10,6 +10,7 @@ public class Main {
         System.out.println("Hello World");
         ArrayList<ArrayList<String>> input = InputReader.readInput();
         System.out.println(input);
+        InputReader.writeOutput("Hello World");
     }
 }
 

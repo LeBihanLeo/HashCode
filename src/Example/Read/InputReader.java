@@ -26,11 +26,11 @@ public class InputReader {
     }
 
     public static void writeOutput(String out){
-            String str = "Hello";
+        String filename = "output.txt";
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter(out));
-            writer.write(str);
+            writer = new BufferedWriter(new FileWriter(filename));
+            writer.write(out);
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
