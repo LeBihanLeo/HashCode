@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class InputReader {
     public static ArrayList<ArrayList<String>> readInput(){
-        String filename = System.getProperty("user.dir")+"\\input.txt";
+        String filename = System.getProperty("user.dir")+"\\src\\input.txt";
         ArrayList<ArrayList<String>> records = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
