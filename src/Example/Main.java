@@ -1,12 +1,8 @@
 package Example;
 
-import java.awt.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import Example.Read.InputReader;
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 
 //update
 public class Main {

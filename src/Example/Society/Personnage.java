@@ -1,4 +1,6 @@
-package Example;
+package Example.Society;
+
+import Example.Skill;
 
 import java.util.ArrayList;
 import java.util.List;

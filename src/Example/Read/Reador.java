@@ -1,6 +1,8 @@
-package Example;
+package Example.Read;
 
-import java.lang.reflect.Array;
+import Example.Skill;
+import Example.Society.Personnage;
+
 import java.util.ArrayList;
 
 public class Reador {
@@ -16,7 +18,7 @@ public class Reador {
     void read(){
         numberOfContributors=Integer.parseInt(toRead.get(0).get(0));
         numberOfJobToDo=Integer.parseInt(toRead.get(0).get(1));
-        
+
     }
 
 }
