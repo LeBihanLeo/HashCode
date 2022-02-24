@@ -25,4 +25,23 @@ public class Personnage {
         this.currentJob = job;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getNbOfSkill() {
+        return nbOfSkill;
+    }
+
+    public Job getCurrentJob() {
+        return currentJob;
+    }
+
+    public List<Skill> getSkillList() {
+        return skillList;
+    }
+    public int getSkillListSize() {
+        return skillList.size();
+    }
+
 }

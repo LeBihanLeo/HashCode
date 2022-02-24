@@ -37,6 +37,33 @@ public class Job implements Comparable{
         return bestBefore-nbOfDays;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getBestBefore() {
+        return bestBefore;
+    }
+
+    public int getNbOfDays() {
+        return nbOfDays;
+    }
+
+    public int getNumberOfRoles() {
+        return numberOfRoles;
+    }
+
+    public int getScoreAwarded() {
+        return scoreAwarded;
+    }
+
+    public List<Skill> getSkillTaskList() {
+        return skillTaskList;
+    }
+    public int getSkillTaskListSize() {
+        return skillTaskList.size();
+    }
+
     @Override
     public int compareTo(Object o) {
         Job job2=(Job) o ;

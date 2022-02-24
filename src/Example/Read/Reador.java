@@ -27,7 +27,7 @@ public class Reador {
         ligne++;
         while (listOfJob.size()==numberOfJobToDo){
             Personnage personnage=new Personnage(toRead.get(ligne).get(0),Integer.parseInt(toRead.get(ligne).get(1)));
-            while
+            while personnage.
         }
         while (listOfPerso.size()==numberOfContributors){
         }
