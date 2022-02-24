@@ -92,7 +92,7 @@ public class Job implements Comparable {
         for (int i = 0; i < skillTaskList.size(); i++) {
             boolean ok = false;
             for (int j = 0; j < personnages.size(); j++) {
-                if (!(ok) && personnages.get(j).isEligible(this)) {
+                if (!(ok) && personnages.get(j).isEligible(this) && personnages.get(i).getCanWork()) {
                     personnagesAssign.add(personnages.get(j));
                 }
             }
