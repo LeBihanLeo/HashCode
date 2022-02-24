@@ -12,10 +12,13 @@ public class Personnage {
 
     Job currentJob;
 
-    public Personnage(String name, List<Skill> skillList, int nbOfSkill) {
+    public Personnage(String name, int nbOfSkill) {
         this.name = name;
-        this.skillList = skillList;
         this.nbOfSkill = nbOfSkill;
+    }
+
+    public void setSkillList(List<Skill> skillList) {
+        this.skillList = skillList;
     }
 
     public void setJob(Job job) {

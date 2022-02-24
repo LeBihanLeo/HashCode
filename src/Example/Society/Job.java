@@ -16,12 +16,15 @@ public class Job implements Comparable{
 
     public Job(String name, List<Skill> skillList, int nbOfDays, int scoreAwarded, int bestBefore, int numberOfRoles) {
         this.name = name;
-        this.skillTaskList = skillList;
         this.nbOfDays = nbOfDays;
         this.scoreAwarded = scoreAwarded;
         this.bestBefore = bestBefore;
         this.numberOfRoles = numberOfRoles;
 
+    }
+
+    public void setSkillTaskList(List<Skill> skillTaskList) {
+        this.skillTaskList = skillTaskList;
     }
 
     public List<Skill> getJob() {
