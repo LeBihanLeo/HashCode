@@ -5,6 +5,7 @@ import Example.Society.Job;
 import Example.Society.Personnage;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Reador {
     ArrayList<ArrayList<String>> toRead;
@@ -15,6 +16,8 @@ public class Reador {
 
     public Reador(){
         this.toRead=InputReader.readInput();
+        read();
+        Collections.sort(listOfJob);
     }
 
     void read(){

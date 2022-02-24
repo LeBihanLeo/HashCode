@@ -4,7 +4,7 @@ import Example.Skill;
 
 import java.util.List;
 
-public class Job {
+public class Job implements Comparable{
     String name;
     int nbOfDays;
     int scoreAwarded;
@@ -28,9 +28,13 @@ public class Job {
         return this.skillTaskList;
     }
 
-    @Override
-    public int compareTo(Job job){
-
+    public int differenceDeJ() {
+        return bestBefore-nbOfDays;
     }
 
+    @Override
+    public int compareTo(Object o) {
+        Job job2=(Job) o ;
+        return(this.differenceDeJ()-job2.differenceDeJ());
+    }
 }
