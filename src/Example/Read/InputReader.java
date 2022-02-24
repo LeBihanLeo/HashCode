@@ -1,7 +1,6 @@
 package Example.Read;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -24,5 +23,18 @@ public class InputReader {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static void writeOutput(String out){
+            String str = "Hello";
+        BufferedWriter writer = null;
+        try {
+            writer = new BufferedWriter(new FileWriter(out));
+            writer.write(str);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
