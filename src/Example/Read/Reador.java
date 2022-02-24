@@ -12,10 +12,10 @@ public class Reador {
     ArrayList<Personnage> listOfPerso=new ArrayList<>();
     ArrayList<Skill> listOfSkill=new ArrayList<>();
 
-    public Reador(ArrayList<ArrayList<String>> toRead){
-        this.toRead=toRead;
+    public Reador(){
+        this.toRead=InputReader.readInput();
     }
-    
+
     void read(){
         numberOfContributors=Integer.parseInt(toRead.get(0).get(0));
         numberOfJobToDo=Integer.parseInt(toRead.get(0).get(1));
