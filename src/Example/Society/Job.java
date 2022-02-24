@@ -27,4 +27,10 @@ public class Job {
     public List<Skill> getJob() {
         return this.skillTaskList;
     }
+
+    @Override
+    public int compareTo(Job job){
+
+    }
+
 }
