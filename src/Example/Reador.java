@@ -1,11 +1,15 @@
 package Example;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Reador {
     ArrayList<ArrayList<String>> toRead;
     int numberOfContributors ;
     int numberOfJobToDo ;
+    ArrayList<Personnage> listOfPerso=new ArrayList<>();
+    ArrayList<Skill> listOfSkill=new ArrayList<>();
+
     public Reador(){
 
     }
