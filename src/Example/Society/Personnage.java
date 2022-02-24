@@ -19,25 +19,44 @@ public class Personnage {
         this.nbOfSkill = nbOfSkill;
     }
 
-    public void setSkillList(List<Skill> skillList) {
-        this.skillList = skillList;
+    public void addSkillList(Skill skill) {
+        this.skillList.add(skill);
     }
 
     public void setJob(Job job) {
         this.currentJob = job;
     }
 
-    public boolean getCanWork(){
-       if (this.job == null) return true;
-       return false;
+    public boolean getCanWork() {
+        if (this.job == null) return true;
+        return false;
     }
 
-    public List<Skill> getSkill(){
+    public List<Skill> getSkill() {
         return this.skillList;
     }
 
-    public boolean isEligible(Job job){
-        job
+    public boolean isEligible(Job job) {
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getNbOfSkill() {
+        return nbOfSkill;
+    }
+
+    public Job getCurrentJob() {
+        return currentJob;
+    }
+
+    public List<Skill> getSkillList() {
+        return skillList;
+    }
+
+    public int getSkillListSize() {
+        return skillList.size();
     }
 
 }

@@ -16,17 +16,18 @@ public class Job implements Comparable {
 
     boolean assign = false;
 
-    public Job(String name, List<Skill> skillList, int nbOfDays, int scoreAwarded, int bestBefore, int numberOfRoles) {
+    public Job(String name, int nbOfDays, int scoreAwarded, int bestBefore, int numberOfRoles) {
         this.name = name;
         this.nbOfDays = nbOfDays;
         this.scoreAwarded = scoreAwarded;
         this.bestBefore = bestBefore;
         this.numberOfRoles = numberOfRoles;
+        skillTaskList=new ArrayList<>();
 
     }
 
-    public void setSkillTaskList(List<Skill> skillTaskList) {
-        this.skillTaskList = skillTaskList;
+    public void addSkillTaskList(Skill skillTask) {
+        this.skillTaskList.add(skillTask);
     }
 
     public List<Skill> getJob() {
@@ -35,6 +36,33 @@ public class Job implements Comparable {
 
     public int differenceDeJ() {
         return bestBefore - nbOfDays;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getBestBefore() {
+        return bestBefore;
+    }
+
+    public int getNbOfDays() {
+        return nbOfDays;
+    }
+
+    public int getNumberOfRoles() {
+        return numberOfRoles;
+    }
+
+    public int getScoreAwarded() {
+        return scoreAwarded;
+    }
+
+    public List<Skill> getSkillTaskList() {
+        return skillTaskList;
+    }
+    public int getSkillTaskListSize() {
+        return skillTaskList.size();
     }
 
     @Override

@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class InputReader {
     public static ArrayList<ArrayList<String>> readInput(){
-        String filename = System.getProperty("user.dir")+"\\input.txt";
+        String filename = System.getProperty("user.dir")+"\\src\\input.txt";
         ArrayList<ArrayList<String>> records = new ArrayList<>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
@@ -26,11 +26,11 @@ public class InputReader {
     }
 
     public static void writeOutput(String out){
-            String str = "Hello";
+        String filename = "output.txt";
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter(out));
-            writer.write(str);
+            writer = new BufferedWriter(new FileWriter(filename));
+            writer.write(out);
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
