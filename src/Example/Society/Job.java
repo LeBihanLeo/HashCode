@@ -22,7 +22,7 @@ public class Job implements Comparable {
         this.scoreAwarded = scoreAwarded;
         this.bestBefore = bestBefore;
         this.numberOfRoles = numberOfRoles;
-        skillTaskList=new ArrayList<>();
+        skillTaskList = new ArrayList<>();
 
     }
 
@@ -61,6 +61,7 @@ public class Job implements Comparable {
     public List<Skill> getSkillTaskList() {
         return skillTaskList;
     }
+
     public int getSkillTaskListSize() {
         return skillTaskList.size();
     }
@@ -80,30 +81,22 @@ public class Job implements Comparable {
         return this.assign;
     }
 
-    public boolean canDoIt(ArrayList<Personnage> personnages) {
-        ArrayList<Personnage> personnagesAssign = new ArrayList<>();
-
-        this.skillTaskList.forEach(s -> {
-            personnages.forEach(p -> {
-                p.getSkill().forEach(s1 -> {
-                    if (s1.getLevel() >= s.getLevel() && s1.getName().equals(s.getName())) {
-                        personnages.add(p);
-                    }
-                });
-            });
-        });
-
-        ArrayList<Personnage> personnagesAssignBest = new ArrayList<>();
-
-        for (int i = 0; i < skillTaskList.size(); i++) {
-
-            ArrayList<Job> jobCanWork = new ArrayList<Job>
-                    (personnagesAssign.stream().filter(p -> p.getSkill().contains(skillTaskList.get(i)
-
-                    )).collect(Collectors.toList()));
-
-        }
+    public boolean canDoItBool(ArrayList<Personnage> personnages) {
+        if(this.canDoIt(personnages))
 
     }
 
+    public ArrayList<Personnage> canDoIt(ArrayList<Personnage> personnages) {
+        ArrayList<Personnage> personnagesAssign = new ArrayList<>();
+
+        for (int i = 0; i < skillTaskList.size(); i++) {
+            boolean ok = false;
+            for (int j = 0; j < personnages.size(); j++) {
+                if (!(ok) && personnages.get(j).isEligible(this)) {
+                    personnagesAssign.add(personnages.get(j));
+                }
+            }
+        }
+
+    }
 }

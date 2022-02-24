@@ -37,7 +37,16 @@ public class Personnage {
     }
 
     public boolean isEligible(Job job) {
+        for (Skill skillJob : job.getSkillTaskList()) {
+            for (Skill skill : skillList) {
+                if (skillJob.getLevel() >= skill.getLevel() && skillJob.getName().equals(skill.getName())) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
+
 
     public String getName() {
         return name;
