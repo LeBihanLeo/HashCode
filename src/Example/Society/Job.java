@@ -2,6 +2,7 @@ package Example.Society;
 
 import Example.Skill;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Job implements Comparable{
@@ -20,11 +21,12 @@ public class Job implements Comparable{
         this.scoreAwarded = scoreAwarded;
         this.bestBefore = bestBefore;
         this.numberOfRoles = numberOfRoles;
+        skillTaskList=new ArrayList<>();
 
     }
 
-    public void setSkillTaskList(List<Skill> skillTaskList) {
-        this.skillTaskList = skillTaskList;
+    public void addSkillTaskList(Skill skillTask) {
+        this.skillTaskList.add(skillTask);
     }
 
     public List<Skill> getJob() {

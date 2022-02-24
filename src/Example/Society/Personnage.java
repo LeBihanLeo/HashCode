@@ -17,8 +17,8 @@ public class Personnage {
         this.nbOfSkill = nbOfSkill;
     }
 
-    public void setSkillList(List<Skill> skillList) {
-        this.skillList = skillList;
+    public void addSkillList(Skill skill) {
+        this.skillList.add(skill);
     }
 
     public void setJob(Job job) {
