@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World");
-        String filename = "./input.txt";
+        String filename = System.getProperty("user.dir")+"\\input.txt";
         ArrayList<String> records = new ArrayList<String>();
         try {
             BufferedReader reader = new BufferedReader(new FileReader(filename));
