@@ -11,7 +11,7 @@ public class Job {
         this.skillTaskList = skillTaskList;
     }
 
-    public List<Skill> getJobs() {
+    public List<Skill> getJob() {
         return this.skillTaskList;
     }
 }
