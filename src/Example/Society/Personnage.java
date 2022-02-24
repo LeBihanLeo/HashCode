@@ -86,7 +86,8 @@ public class Personnage{
 
     public void upgradeSkill(Skill skill) {
         if(skillList.contains(skill)){
-            skill.upgrade();
+            int index = skillList.indexOf(skill);
+            skillList.get(index).upgrade();
         }
     }
 }

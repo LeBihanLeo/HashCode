@@ -139,8 +139,11 @@ public class Job implements Comparable {
     }
 
     public void upgradeWorkers() {
-        skillTaskList.forEach(skill -> peopleWorkOn.forEach(people -> people.upgradeSkill(skill)));
-        ;
+        for(Skill currentSkill : skillTaskList){
+            for(Personnage personnage : peopleWorkOn){
+                personnage.upgradeSkill(currentSkill);
+            }
+        }
     }
 
     @Override

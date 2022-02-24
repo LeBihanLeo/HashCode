@@ -72,7 +72,7 @@ public class Strat {
     }
 
     public void passTheDay() {
-        ArrayList<Job> loopJob = (ArrayList<Job>) jobs.clone();
+        ArrayList<Job> loopJob = (ArrayList<Job>) startJob.clone();
         for(Job currentJob : loopJob){
             currentJob.passDay();
             if(currentJob.projectIsEnd()){
